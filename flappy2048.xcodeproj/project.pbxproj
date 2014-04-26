@@ -103,23 +103,23 @@
 		82B99B4118B1301F0099A4FE /* BirdNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BirdNode.m; sourceTree = "<group>"; };
 		82B99B4418B132B40099A4FE /* Score.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Score.h; sourceTree = "<group>"; };
 		82B99B4518B132B40099A4FE /* Score.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Score.m; sourceTree = "<group>"; };
-		82C6A08F18A6F53400FEBE9B /* FroggyBird - birdy frog flapping.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FroggyBird - birdy frog flapping.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		82C6A08F18A6F53400FEBE9B /* Flappy2048.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Flappy2048.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		82C6A09218A6F53400FEBE9B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		82C6A09418A6F53400FEBE9B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		82C6A09618A6F53400FEBE9B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		82C6A09A18A6F53400FEBE9B /* spritybird-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "spritybird-Info.plist"; sourceTree = "<group>"; };
+		82C6A09A18A6F53400FEBE9B /* flappy2048-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "flappy2048-Info.plist"; sourceTree = "<group>"; };
 		82C6A09C18A6F53400FEBE9B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		82C6A09E18A6F53400FEBE9B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		82C6A0A018A6F53400FEBE9B /* spritybird-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "spritybird-Prefix.pch"; sourceTree = "<group>"; };
+		82C6A0A018A6F53400FEBE9B /* flappy2048-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "flappy2048-Prefix.pch"; sourceTree = "<group>"; };
 		82C6A0A118A6F53400FEBE9B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		82C6A0A218A6F53400FEBE9B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		82C6A0A518A6F53400FEBE9B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		82C6A0A718A6F53400FEBE9B /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		82C6A0A818A6F53400FEBE9B /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		82C6A0AA18A6F53400FEBE9B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		82C6A0B018A6F53400FEBE9B /* spritybirdTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = spritybirdTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		82C6A0B018A6F53400FEBE9B /* flappy2048Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = flappy2048Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		82C6A0B118A6F53400FEBE9B /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		82C6A0B918A6F53400FEBE9B /* spritybirdTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "spritybirdTests-Info.plist"; sourceTree = "<group>"; };
+		82C6A0B918A6F53400FEBE9B /* flappy2048Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "flappy2048Tests-Info.plist"; sourceTree = "<group>"; };
 		82C6A0BB18A6F53400FEBE9B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		82C6A0BD18A6F53400FEBE9B /* spritybirdTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = spritybirdTests.m; sourceTree = "<group>"; };
 		82C6A0C718A6FF4200FEBE9B /* Scene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Scene.h; sourceTree = "<group>"; };
@@ -261,8 +261,8 @@
 		82C6A08618A6F53400FEBE9B = {
 			isa = PBXGroup;
 			children = (
-				82C6A09818A6F53400FEBE9B /* spritybird */,
-				82C6A0B718A6F53400FEBE9B /* spritybird Tests */,
+				82C6A09818A6F53400FEBE9B /* flappy2048 */,
+				82C6A0B718A6F53400FEBE9B /* flappy2048 Tests */,
 				82C6A09118A6F53400FEBE9B /* Frameworks */,
 				82C6A09018A6F53400FEBE9B /* Products */,
 			);
@@ -271,8 +271,8 @@
 		82C6A09018A6F53400FEBE9B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				82C6A08F18A6F53400FEBE9B /* FroggyBird - birdy frog flapping.app */,
-				82C6A0B018A6F53400FEBE9B /* spritybirdTests.xctest */,
+				82C6A08F18A6F53400FEBE9B /* Flappy2048.app */,
+				82C6A0B018A6F53400FEBE9B /* flappy2048Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -297,7 +297,7 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		82C6A09818A6F53400FEBE9B /* spritybird */ = {
+		82C6A09818A6F53400FEBE9B /* flappy2048 */ = {
 			isa = PBXGroup;
 			children = (
 				18E25A2618DD8087002DEDF7 /* Views */,
@@ -308,34 +308,35 @@
 				82C6A09918A6F53400FEBE9B /* Supporting Files */,
 				AA80C38318DAFD430005E000 /* Libs */,
 			);
+			name = flappy2048;
 			path = spritybird;
 			sourceTree = "<group>";
 		};
 		82C6A09918A6F53400FEBE9B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				82C6A09A18A6F53400FEBE9B /* spritybird-Info.plist */,
+				82C6A09A18A6F53400FEBE9B /* flappy2048-Info.plist */,
 				82C6A09B18A6F53400FEBE9B /* InfoPlist.strings */,
 				82C6A09E18A6F53400FEBE9B /* main.m */,
-				82C6A0A018A6F53400FEBE9B /* spritybird-Prefix.pch */,
+				82C6A0A018A6F53400FEBE9B /* flappy2048-Prefix.pch */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		82C6A0B718A6F53400FEBE9B /* spritybird Tests */ = {
+		82C6A0B718A6F53400FEBE9B /* flappy2048 Tests */ = {
 			isa = PBXGroup;
 			children = (
 				82C6A0BD18A6F53400FEBE9B /* spritybirdTests.m */,
 				82C6A0B818A6F53400FEBE9B /* Supporting Files */,
 			);
-			name = "spritybird Tests";
+			name = "flappy2048 Tests";
 			path = spritybirdTests;
 			sourceTree = "<group>";
 		};
 		82C6A0B818A6F53400FEBE9B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				82C6A0B918A6F53400FEBE9B /* spritybirdTests-Info.plist */,
+				82C6A0B918A6F53400FEBE9B /* flappy2048Tests-Info.plist */,
 				82C6A0BA18A6F53400FEBE9B /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
@@ -440,9 +441,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		82C6A08E18A6F53400FEBE9B /* spritybird */ = {
+		82C6A08E18A6F53400FEBE9B /* flappy2048 */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 82C6A0C118A6F53400FEBE9B /* Build configuration list for PBXNativeTarget "spritybird" */;
+			buildConfigurationList = 82C6A0C118A6F53400FEBE9B /* Build configuration list for PBXNativeTarget "flappy2048" */;
 			buildPhases = (
 				82C6A08B18A6F53400FEBE9B /* Sources */,
 				82C6A08C18A6F53400FEBE9B /* Frameworks */,
@@ -452,14 +453,14 @@
 			);
 			dependencies = (
 			);
-			name = spritybird;
+			name = flappy2048;
 			productName = spritybird;
-			productReference = 82C6A08F18A6F53400FEBE9B /* FroggyBird - birdy frog flapping.app */;
+			productReference = 82C6A08F18A6F53400FEBE9B /* Flappy2048.app */;
 			productType = "com.apple.product-type.application";
 		};
-		82C6A0AF18A6F53400FEBE9B /* spritybirdTests */ = {
+		82C6A0AF18A6F53400FEBE9B /* flappy2048Tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 82C6A0C418A6F53400FEBE9B /* Build configuration list for PBXNativeTarget "spritybirdTests" */;
+			buildConfigurationList = 82C6A0C418A6F53400FEBE9B /* Build configuration list for PBXNativeTarget "flappy2048Tests" */;
 			buildPhases = (
 				82C6A0AC18A6F53400FEBE9B /* Sources */,
 				82C6A0AD18A6F53400FEBE9B /* Frameworks */,
@@ -470,9 +471,9 @@
 			dependencies = (
 				82C6A0B618A6F53400FEBE9B /* PBXTargetDependency */,
 			);
-			name = spritybirdTests;
+			name = flappy2048Tests;
 			productName = spritybirdTests;
-			productReference = 82C6A0B018A6F53400FEBE9B /* spritybirdTests.xctest */;
+			productReference = 82C6A0B018A6F53400FEBE9B /* flappy2048Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -489,7 +490,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 82C6A08A18A6F53400FEBE9B /* Build configuration list for PBXProject "spritybird" */;
+			buildConfigurationList = 82C6A08A18A6F53400FEBE9B /* Build configuration list for PBXProject "flappy2048" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -502,8 +503,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				82C6A08E18A6F53400FEBE9B /* spritybird */,
-				82C6A0AF18A6F53400FEBE9B /* spritybirdTests */,
+				82C6A08E18A6F53400FEBE9B /* flappy2048 */,
+				82C6A0AF18A6F53400FEBE9B /* flappy2048Tests */,
 			);
 		};
 /* End PBXProject section */
@@ -585,7 +586,7 @@
 /* Begin PBXTargetDependency section */
 		82C6A0B618A6F53400FEBE9B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 82C6A08E18A6F53400FEBE9B /* spritybird */;
+			target = 82C6A08E18A6F53400FEBE9B /* flappy2048 */;
 			targetProxy = 82C6A0B518A6F53400FEBE9B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -697,15 +698,15 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Kenneth Lipscomb (EGDHMM643Z)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "spritybird/Supporting Files/spritybird-Prefix.pch";
-				INFOPLIST_FILE = "spritybird/Supporting Files/spritybird-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				GCC_PREFIX_HEADER = "spritybird/Supporting Files/flappy2048-Prefix.pch";
+				INFOPLIST_FILE = "spritybird/Supporting Files/flappy2048-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/spritybird/Libs/GoogleAdMobAdsSdkiOS-6.8.0",
 				);
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = "FroggyBird - birdy frog flapping";
+				PRODUCT_NAME = Flappy2048;
 				PROVISIONING_PROFILE = "9D35B1E8-F509-4106-A238-E6DC095BA067";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
@@ -719,15 +720,15 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Vu Trong (5WX3ZR98FQ)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "spritybird/Supporting Files/spritybird-Prefix.pch";
-				INFOPLIST_FILE = "spritybird/Supporting Files/spritybird-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				GCC_PREFIX_HEADER = "spritybird/Supporting Files/flappy2048-Prefix.pch";
+				INFOPLIST_FILE = "spritybird/Supporting Files/flappy2048-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/spritybird/Libs/GoogleAdMobAdsSdkiOS-6.8.0",
 				);
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = "FroggyBird - birdy frog flapping";
+				PRODUCT_NAME = Flappy2048;
 				PROVISIONING_PROFILE = "9D35B1E8-F509-4106-A238-E6DC095BA067";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
@@ -750,8 +751,8 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "spritybirdTests/spritybirdTests-Info.plist";
-				PRODUCT_NAME = spritybirdTests;
+				INFOPLIST_FILE = "spritybirdTests/flappy2048Tests-Info.plist";
+				PRODUCT_NAME = flappy2048Tests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -769,8 +770,8 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "spritybird/spritybird-Prefix.pch";
-				INFOPLIST_FILE = "spritybirdTests/spritybirdTests-Info.plist";
-				PRODUCT_NAME = spritybirdTests;
+				INFOPLIST_FILE = "spritybirdTests/flappy2048Tests-Info.plist";
+				PRODUCT_NAME = flappy2048Tests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -779,7 +780,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		82C6A08A18A6F53400FEBE9B /* Build configuration list for PBXProject "spritybird" */ = {
+		82C6A08A18A6F53400FEBE9B /* Build configuration list for PBXProject "flappy2048" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				82C6A0BF18A6F53400FEBE9B /* Debug */,
@@ -788,7 +789,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		82C6A0C118A6F53400FEBE9B /* Build configuration list for PBXNativeTarget "spritybird" */ = {
+		82C6A0C118A6F53400FEBE9B /* Build configuration list for PBXNativeTarget "flappy2048" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				82C6A0C218A6F53400FEBE9B /* Debug */,
@@ -797,7 +798,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		82C6A0C418A6F53400FEBE9B /* Build configuration list for PBXNativeTarget "spritybirdTests" */ = {
+		82C6A0C418A6F53400FEBE9B /* Build configuration list for PBXNativeTarget "flappy2048Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				82C6A0C518A6F53400FEBE9B /* Debug */,

@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "82C6A08E18A6F53400FEBE9B"
-               BuildableName = "FroggyBird - birdy frog flapping.app"
-               BlueprintName = "spritybird"
-               ReferencedContainer = "container:spritybird.xcodeproj">
+               BuildableName = "Flappy2048.app"
+               BlueprintName = "flappy2048"
+               ReferencedContainer = "container:flappy2048.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "82C6A0AF18A6F53400FEBE9B"
-               BuildableName = "spritybirdTests.xctest"
-               BlueprintName = "spritybirdTests"
-               ReferencedContainer = "container:spritybird.xcodeproj">
+               BuildableName = "flappy2048Tests.xctest"
+               BlueprintName = "flappy2048Tests"
+               ReferencedContainer = "container:flappy2048.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -43,9 +43,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "82C6A08E18A6F53400FEBE9B"
-            BuildableName = "FroggyBird - birdy frog flapping.app"
-            BlueprintName = "spritybird"
-            ReferencedContainer = "container:spritybird.xcodeproj">
+            BuildableName = "Flappy2048.app"
+            BlueprintName = "flappy2048"
+            ReferencedContainer = "container:flappy2048.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -62,9 +62,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "82C6A08E18A6F53400FEBE9B"
-            BuildableName = "FroggyBird - birdy frog flapping.app"
-            BlueprintName = "spritybird"
-            ReferencedContainer = "container:spritybird.xcodeproj">
+            BuildableName = "Flappy2048.app"
+            BlueprintName = "flappy2048"
+            ReferencedContainer = "container:flappy2048.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -80,9 +80,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "82C6A08E18A6F53400FEBE9B"
-            BuildableName = "FroggyBird - birdy frog flapping.app"
-            BlueprintName = "spritybird"
-            ReferencedContainer = "container:spritybird.xcodeproj">
+            BuildableName = "Flappy2048.app"
+            BlueprintName = "flappy2048"
+            ReferencedContainer = "container:flappy2048.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

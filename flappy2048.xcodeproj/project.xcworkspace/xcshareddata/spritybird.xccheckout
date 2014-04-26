@@ -5,36 +5,36 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>35BAF4CB-BB93-4FF2-B8A4-33852E2F28C4</string>
+	<string>F19622CC-69A0-42DD-8607-CE08B295C3B8</string>
 	<key>IDESourceControlProjectName</key>
 	<string>spritybird</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>E6B34F83-7A6C-4894-B6CC-B78FDFA24DDD</key>
-		<string>https://github.com/aigo/project4.git</string>
+		<key>3CDBFA91-63AA-4494-870F-EE6DC5B74125</key>
+		<string>https://github.com/aigo/game1.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>spritybird.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>E6B34F83-7A6C-4894-B6CC-B78FDFA24DDD</key>
+		<key>3CDBFA91-63AA-4494-870F-EE6DC5B74125</key>
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/aigo/project4.git</string>
+	<string>https://github.com/aigo/game1.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>E6B34F83-7A6C-4894-B6CC-B78FDFA24DDD</string>
+	<string>3CDBFA91-63AA-4494-870F-EE6DC5B74125</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>E6B34F83-7A6C-4894-B6CC-B78FDFA24DDD</string>
+			<string>3CDBFA91-63AA-4494-870F-EE6DC5B74125</string>
 			<key>IDESourceControlWCCName</key>
-			<string>froggybird</string>
+			<string>flappy2048</string>
 		</dict>
 	</array>
 </dict>
