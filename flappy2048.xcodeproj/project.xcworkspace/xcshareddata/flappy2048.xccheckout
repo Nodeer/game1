@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>30C4592F-E710-43C9-885F-C1C4EE991D84</string>
+	<key>IDESourceControlProjectName</key>
+	<string>flappy2048</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>3CDBFA91-63AA-4494-870F-EE6DC5B74125</key>
+		<string>https://github.com/aigo/game1.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>flappy2048.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>3CDBFA91-63AA-4494-870F-EE6DC5B74125</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/aigo/game1.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>3CDBFA91-63AA-4494-870F-EE6DC5B74125</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>3CDBFA91-63AA-4494-870F-EE6DC5B74125</string>
+			<key>IDESourceControlWCCName</key>
+			<string>flappy2048</string>
+		</dict>
+	</array>
+</dict>
+</plist>
