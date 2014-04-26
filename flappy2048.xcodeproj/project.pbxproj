@@ -214,13 +214,6 @@
 			path = Classes/Views;
 			sourceTree = "<group>";
 		};
-		18E25A3918DDE20F002DEDF7 /* iPad */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = iPad;
-			sourceTree = "<group>";
-		};
 		8274FC3318A7F14000FEBCE7 /* Images */ = {
 			isa = PBXGroup;
 			children = (
@@ -304,7 +297,6 @@
 				18E25A1F18DD7C47002DEDF7 /* Common */,
 				82C6A0D218A790BA00FEBE9B /* Classes */,
 				82C6A0D918A7913200FEBE9B /* Resources */,
-				18E25A3918DDE20F002DEDF7 /* iPad */,
 				82C6A09918A6F53400FEBE9B /* Supporting Files */,
 				AA80C38318DAFD430005E000 /* Libs */,
 			);
