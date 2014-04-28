@@ -56,6 +56,8 @@
 		AA80C3A118DB009A0005E000 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA80C3A018DB009A0005E000 /* AVFoundation.framework */; };
 		AA80C3A318DB082D0005E000 /* Froggy-Jump.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AA80C3A218DB082D0005E000 /* Froggy-Jump.mp3 */; };
 		AA80C3A518DBF8D90005E000 /* Foggy-Drop.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AA80C3A418DBF8D90005E000 /* Foggy-Drop.mp3 */; };
+		AAA0C713190B8CAB00154BAE /* wing-small.png in Resources */ = {isa = PBXBuildFile; fileRef = AAA0C712190B8CAB00154BAE /* wing-small.png */; };
+		AAA0C716190B928200154BAE /* ObstacleNode.m in Sources */ = {isa = PBXBuildFile; fileRef = AAA0C715190B928200154BAE /* ObstacleNode.m */; };
 		AAD7206318F2780300B4A02F /* frog_1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AAD7206018F2780300B4A02F /* frog_1@2x.png */; };
 		AAD7206418F2780300B4A02F /* frog_2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AAD7206118F2780300B4A02F /* frog_2@2x.png */; };
 		AAD7206518F2780300B4A02F /* frog_3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AAD7206218F2780300B4A02F /* frog_3@2x.png */; };
@@ -151,6 +153,9 @@
 		AA80C3A018DB009A0005E000 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		AA80C3A218DB082D0005E000 /* Froggy-Jump.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Froggy-Jump.mp3"; sourceTree = "<group>"; };
 		AA80C3A418DBF8D90005E000 /* Foggy-Drop.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Foggy-Drop.mp3"; sourceTree = "<group>"; };
+		AAA0C712190B8CAB00154BAE /* wing-small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wing-small.png"; sourceTree = "<group>"; };
+		AAA0C714190B928200154BAE /* ObstacleNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObstacleNode.h; sourceTree = "<group>"; };
+		AAA0C715190B928200154BAE /* ObstacleNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ObstacleNode.m; sourceTree = "<group>"; };
 		AAD7206018F2780300B4A02F /* frog_1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frog_1@2x.png"; sourceTree = "<group>"; };
 		AAD7206118F2780300B4A02F /* frog_2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frog_2@2x.png"; sourceTree = "<group>"; };
 		AAD7206218F2780300B4A02F /* frog_3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frog_3@2x.png"; sourceTree = "<group>"; };
@@ -217,6 +222,7 @@
 		8274FC3318A7F14000FEBCE7 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				AAA0C712190B8CAB00154BAE /* wing-small.png */,
 				AAD7208618F3A93E00B4A02F /* lotus_bottom@2x.png */,
 				AAD7208718F3A93E00B4A02F /* lotus_top@2x.png */,
 				AAD7208218F3A92100B4A02F /* wood_bottom@2x.png */,
@@ -377,6 +383,8 @@
 				82C6A0DB18A7918800FEBE9B /* SKScrollingNode.m */,
 				82B99B4018B1301F0099A4FE /* BirdNode.h */,
 				82B99B4118B1301F0099A4FE /* BirdNode.m */,
+				AAA0C714190B928200154BAE /* ObstacleNode.h */,
+				AAA0C715190B928200154BAE /* ObstacleNode.m */,
 			);
 			name = Nodes;
 			sourceTree = "<group>";
@@ -531,6 +539,7 @@
 				576A22CE18B9CB8E001338C0 /* Main.storyboard in Resources */,
 				AAD7208518F3A92100B4A02F /* wood_top@2x.png in Resources */,
 				AA80C39118DAFD430005E000 /* README.txt in Resources */,
+				AAA0C713190B8CAB00154BAE /* wing-small.png in Resources */,
 				82457DBE18B2C3490042CF82 /* floor@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -555,6 +564,7 @@
 				821A755718AD617800B376D5 /* ViewController.m in Sources */,
 				821A755818AD617800B376D5 /* Scene.m in Sources */,
 				18E25A2C18DD80BB002DEDF7 /* AGQuestionTableCell.m in Sources */,
+				AAA0C716190B928200154BAE /* ObstacleNode.m in Sources */,
 				821A755918AD617800B376D5 /* SKScrollingNode.m in Sources */,
 				18E25A3218DD8BDA002DEDF7 /* AGQuestionViewController.m in Sources */,
 				82B99B4618B132B40099A4FE /* Score.m in Sources */,
@@ -699,7 +709,7 @@
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = Flappy2048;
-				PROVISIONING_PROFILE = "9D35B1E8-F509-4106-A238-E6DC095BA067";
+				PROVISIONING_PROFILE = "ED77683C-FF3E-40D7-8819-4748D1D87052";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
@@ -721,7 +731,7 @@
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = Flappy2048;
-				PROVISIONING_PROFILE = "9D35B1E8-F509-4106-A238-E6DC095BA067";
+				PROVISIONING_PROFILE = "ED77683C-FF3E-40D7-8819-4748D1D87052";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};

@@ -40,8 +40,8 @@
     [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationSlide];
     
 	// Configure the view.
-    //self.gameView.showsFPS = YES;
-    //self.gameView.showsNodeCount = YES;
+    self.gameView.showsFPS = YES;
+    self.gameView.showsNodeCount = YES;
     
     // Score Revise
     [Score registerReviseScore:1];

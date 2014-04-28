@@ -11,15 +11,7 @@
 #import "BirdNode.h"
 #import "Score.h"
 #import <AudioToolbox/AudioToolbox.h>
-
-#define BACK_SCROLLING_SPEED .5
-#define FLOOR_SCROLLING_SPEED 3
-
-// Obstacles
-#define VERTICAL_GAP_SIZE 120
-#define FIRST_OBSTACLE_PADDING 100
-#define OBSTACLE_MIN_HEIGHT 60
-#define OBSTACLE_INTERVAL_SPACE 130
+#import "ObstacleNode.h"
 
 @implementation Scene{
     SKScrollingNode * floor;
@@ -28,8 +20,10 @@
     BirdNode * bird;
     
     int nbObstacles;
-    NSMutableArray * topPipes;
-    NSMutableArray * bottomPipes;
+    int nbObstacleNodes;
+    BOOL isContacting;
+    CGPoint pointContact;
+    NSMutableArray * obstacles;
 }
 
 static bool wasted = NO;
@@ -56,6 +50,7 @@ static bool wasted = NO;
 {
     // Reinit
     wasted = NO;
+    isContacting = NO;
     
     [self removeAllChildren];
     
@@ -123,37 +118,28 @@ static bool wasted = NO;
     // Calculate how many obstacles we need, the less the better
     nbObstacles = ceil(WIDTH(self)/(OBSTACLE_INTERVAL_SPACE));
     
+    nbObstacleNodes = ceil((HEIGHT(self) - HEIGHT(floor))/(NODE_HIGHT));
+    
     CGFloat lastBlockPos = 0;
-    bottomPipes = @[].mutableCopy;
-    topPipes = @[].mutableCopy;
+    obstacles = @[].mutableCopy;
     for(int i=0;i<nbObstacles;i++){
-        SKSpriteNode * topPipe;
-        if (self.obstacleType == OBSTACLE_LOTUS) {
-            topPipe = [SKSpriteNode spriteNodeWithImageNamed:@"lotus_top"];
-        } else {
-            topPipe = [SKSpriteNode spriteNodeWithImageNamed:@"wood_top"];
-        }
-        [topPipe setAnchorPoint:CGPointZero];
-        [self addChild:topPipe];
-        [topPipes addObject:topPipe];
         
-        SKSpriteNode * bottomPipe;
-        if (self.obstacleType == OBSTACLE_LOTUS) {
-            bottomPipe = [SKSpriteNode spriteNodeWithImageNamed:@"lotus_bottom"];
-        } else {
-            bottomPipe = [SKSpriteNode spriteNodeWithImageNamed:@"wood_bottom"];
+        ObstacleNode *obstacleNode;
+        for (int j=0;j< nbObstacleNodes;j++) {
+            
+            obstacleNode = [ObstacleNode new];
+            [obstacleNode setAnchorPoint:CGPointZero];
+            [self addChild:obstacleNode];
+            [obstacles addObject:obstacleNode];
+            
+            // Give some time to the player before first obstacle
+            if(0 == i){
+                [self place:obstacleNode atX:WIDTH(self)+FIRST_OBSTACLE_PADDING index:j];
+            }else{
+                [self place:obstacleNode atX:lastBlockPos + WIDTH(obstacleNode) +OBSTACLE_INTERVAL_SPACE index:j];
+            }
         }
-        [bottomPipe setAnchorPoint:CGPointZero];
-        [self addChild:bottomPipe];
-        [bottomPipes addObject:bottomPipe];
-        
-        // Give some time to the player before first obstacle
-        if(0 == i){
-            [self place:bottomPipe and:topPipe atX:WIDTH(self)+FIRST_OBSTACLE_PADDING];
-        }else{
-            [self place:bottomPipe and:topPipe atX:lastBlockPos + WIDTH(bottomPipe) +OBSTACLE_INTERVAL_SPACE];
-        }
-        lastBlockPos = topPipe.position.x;
+        lastBlockPos = obstacleNode.position.x;
     }
     
 }
@@ -203,45 +189,54 @@ static bool wasted = NO;
     
     for(int i=0;i<nbObstacles;i++){
         
-        // Get pipes bby pairs
-        SKSpriteNode * topPipe = (SKSpriteNode *) topPipes[i];
-        SKSpriteNode * bottomPipe = (SKSpriteNode *) bottomPipes[i];
-        
-        // Check if pair has exited screen, and place them upfront again
-        if (X(topPipe) < -WIDTH(topPipe)){
-            SKSpriteNode * mostRightPipe = (SKSpriteNode *) topPipes[(i+(nbObstacles-1))%nbObstacles];
-            [self place:bottomPipe and:topPipe atX:X(mostRightPipe)+WIDTH(topPipe)+OBSTACLE_INTERVAL_SPACE];
+        for(int j=0;j<nbObstacleNodes;j++){
+
+            // Get obstacle
+            ObstacleNode * obstacleNode = (ObstacleNode *) obstacles[i*nbObstacleNodes+j];
+            
+            // Check if obstacle has exited screen, and place them upfront again
+            if (X(obstacleNode) < -WIDTH(obstacleNode)){
+                int mostRightColumn = (i+(nbObstacles-1))%nbObstacles;
+                int mostRightIndex = mostRightColumn*nbObstacleNodes + j;
+                SKSpriteNode * mostRightPipe = (SKSpriteNode *) obstacles[mostRightIndex];
+                [self place:obstacleNode atX:X(mostRightPipe)+WIDTH(obstacleNode)+OBSTACLE_INTERVAL_SPACE index:j];
+            }
+            
+            if (obstacleNode.isContact) {
+                //obstacleNode.position = CGPointMake(X(obstacleNode) + FLOOR_SCROLLING_SPEED, Y(obstacleNode));
+                
+                if (bird.position.x < pointContact.x + FLOOR_SCROLLING_SPEED) {
+                    bird.position = CGPointMake(pointContact.x + FLOOR_SCROLLING_SPEED, pointContact.y);
+                } else {
+                    bird.position = CGPointMake(X(bird) + FLOOR_SCROLLING_SPEED, Y(bird));
+                }
+                
+                // pass
+                if (bird.position.x > obstacleNode.position.x + NODE_HIGHT * 2) {
+                    obstacleNode.isContact = NO;
+                    isContacting = NO;
+                    bird.isContact = NO;
+//                    [bird setTextNumber:[bird getTextNumber]*2];
+                }
+            }
+            
+
+            // Move according to the scrolling speed
+            obstacleNode.position = CGPointMake(X(obstacleNode) - FLOOR_SCROLLING_SPEED, Y(obstacleNode));
+            
+            
         }
-        
-        // Move according to the scrolling speed
-        topPipe.position = CGPointMake(X(topPipe) - FLOOR_SCROLLING_SPEED, Y(topPipe));
-        bottomPipe.position = CGPointMake(X(bottomPipe) - FLOOR_SCROLLING_SPEED, Y(bottomPipe));
     }
 }
 
-- (void) place:(SKSpriteNode *) bottomPipe and:(SKSpriteNode *) topPipe atX:(float) xPos
+- (void) place:(SKSpriteNode *) obstacleNode atX:(float) xPos index:(int) index
 {
     // Maths
-    float availableSpace = HEIGHT(self) - HEIGHT(floor);
-    float maxVariance = availableSpace - (2*OBSTACLE_MIN_HEIGHT) - VERTICAL_GAP_SIZE;
-    float variance = [Math randomFloatBetween:0 and:maxVariance];
-    
-    // Bottom pipe placement
-    float minBottomPosY = HEIGHT(floor) + OBSTACLE_MIN_HEIGHT - HEIGHT(self);
-    float bottomPosY = minBottomPosY + variance;
-    bottomPipe.position = CGPointMake(xPos,bottomPosY);
-    bottomPipe.physicsBody = [SKPhysicsBody bodyWithEdgeLoopFromRect:CGRectMake(0,0, WIDTH(bottomPipe) , HEIGHT(bottomPipe))];
-    bottomPipe.physicsBody.categoryBitMask = blockBitMask;
-    bottomPipe.physicsBody.contactTestBitMask = birdBitMask;
-    
-    // Top pipe placement
-    topPipe.position = CGPointMake(xPos,bottomPosY + HEIGHT(bottomPipe) + VERTICAL_GAP_SIZE);
-    topPipe.physicsBody = [SKPhysicsBody bodyWithEdgeLoopFromRect:CGRectMake(0,0, WIDTH(topPipe), HEIGHT(topPipe))];
-    
-    topPipe.physicsBody = [SKPhysicsBody bodyWithEdgeLoopFromRect:CGRectMake(0,0, WIDTH(topPipe), HEIGHT(topPipe))];
-    
-    topPipe.physicsBody.categoryBitMask = blockBitMask;
-    topPipe.physicsBody.contactTestBitMask = birdBitMask;
+    float yPos = HEIGHT(floor) + NODE_HIGHT * index;
+    obstacleNode.position = CGPointMake(xPos,yPos);
+    obstacleNode.physicsBody = [SKPhysicsBody bodyWithEdgeLoopFromRect:CGRectMake(0,0, WIDTH(obstacleNode) , HEIGHT(obstacleNode))];
+    obstacleNode.physicsBody.categoryBitMask = blockBitMask;
+    obstacleNode.physicsBody.contactTestBitMask = birdBitMask;
 }
 
 
@@ -249,7 +244,7 @@ static bool wasted = NO;
 {
     for(int i=0;i<nbObstacles;i++){
         
-        SKSpriteNode * topPipe = (SKSpriteNode *) topPipes[i];
+        SKSpriteNode * topPipe = (SKSpriteNode *) obstacles[i];
         
         // Score, adapt font size
         if(X(topPipe) + WIDTH(topPipe)/2 > bird.position.x &&
@@ -283,8 +278,8 @@ static bool wasted = NO;
 -(void) playSoundWithPath:(NSString*)name {
     NSString *soundPath = [[NSBundle mainBundle] pathForResource:name ofType:@"mp3"];
     SystemSoundID soundID;
-    AudioServicesCreateSystemSoundID((__bridge CFURLRef)[NSURL fileURLWithPath: soundPath], &soundID);
-    AudioServicesPlaySystemSound (soundID);
+//    AudioServicesCreateSystemSoundID((__bridge CFURLRef)[NSURL fileURLWithPath: soundPath], &soundID);
+//    AudioServicesPlaySystemSound (soundID);
 }
 
 #pragma mark - Physic
@@ -293,16 +288,68 @@ static bool wasted = NO;
 {
     if(wasted){ return; }
     
-    wasted = true;
-    [Score registerScore:self.score];
-    [Score registerReviseScore:self.score];
+    SKSpriteNode *firstNode, *secondNode;
     
-    if([self.delegate respondsToSelector:@selector(eventWasted)]){
-        [self.delegate eventWasted];
+    firstNode = (SKSpriteNode *)contact.bodyA.node;
+    secondNode = (SKSpriteNode *) contact.bodyB.node;
+    
+    BirdNode *iBird;
+    ObstacleNode *iObstacle;
+    
+    BOOL isGameOver = YES;
+    if ((contact.bodyA.categoryBitMask == birdBitMask)
+        && (contact.bodyB.categoryBitMask == blockBitMask)) {
+        iBird = (BirdNode*) contact.bodyA.node;
+        iObstacle = (ObstacleNode*) contact.bodyB.node;
+        
+        if ([iBird getTextNumber] == [iObstacle getTextNumber]) {
+            isGameOver = NO;
+        }
+    } else if ((contact.bodyA.categoryBitMask == blockBitMask)
+              && (contact.bodyB.categoryBitMask == birdBitMask)) {
+        iBird = (BirdNode*) contact.bodyB.node;
+        iObstacle = (ObstacleNode*) contact.bodyA.node;
+        if ([iBird getTextNumber] == [iObstacle getTextNumber]) {
+            isGameOver = NO;
+        }
     }
     
-    // Play Sound
-    [self playSoundWithPath:SOUND_HIT];
+    if ( isGameOver) {
     
+        wasted = true;
+        [Score registerScore:self.score];
+        [Score registerReviseScore:self.score];
+        
+        if([self.delegate respondsToSelector:@selector(eventWasted)]){
+            [self.delegate eventWasted];
+    
+            // Play Sound
+            [self playSoundWithPath:SOUND_HIT];
+        }
+    } else {
+        
+        // let the Bird go through
+        
+//        CGPoint anchor = CGPointMake(100, 100);
+//        CGVector av =CGVectorMake(0.0, 5.0);
+//        SKPhysicsJointSliding* fixedJoint = [SKPhysicsJointSliding jointWithBodyA:iBird.physicsBody
+//                                                                        bodyB:iObstacle.physicsBody
+//                                                                       anchor:anchor axis:av];
+//        [self.scene.physicsWorld addJoint:fixedJoint];
+        if (isContacting) {
+            
+        } else {
+            isContacting = YES;
+            
+            // Convert to Center point
+            pointContact = CGPointMake(iObstacle.position.x + NODE_HIGHT/2, iObstacle.position.y + NODE_HIGHT/2);
+            
+            iObstacle.isContact = YES;
+            iBird.isContact = YES;
+            iBird.position = CGPointMake(pointContact.x + FLOOR_SCROLLING_SPEED, pointContact.y);
+        }
+        
+//        [iBird setTextNumber:[iBird getTextNumber]*2];
+    }
 }
 @end

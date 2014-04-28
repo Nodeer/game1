@@ -25,27 +25,46 @@ static bool goingUp = false;
 {
     if(self = [super init]){
         
-        // TODO : use texture atlas
-        SKTexture* birdTexture1 = [SKTexture textureWithImageNamed:@"frog_1"];
-        birdTexture1.filteringMode = SKTextureFilteringNearest;
-        SKTexture* birdTexture2 = [SKTexture textureWithImageNamed:@"frog_2"];
-        birdTexture2.filteringMode = SKTextureFilteringNearest;
-        SKTexture* birdTexture3 = [SKTexture textureWithImageNamed:@"frog_3"];
-        birdTexture2.filteringMode = SKTextureFilteringNearest;
+        self = [BirdNode spriteNodeWithColor:[UIColor   colorWithRed:0.0/255.0
+                                                                                 green:128.0/255.0
+                                                                                  blue:255.0/255.0
+                                                                                 alpha:1.0] size:CGSizeMake(NODE_HIGHT, NODE_HIGHT)];
         
-        self = [BirdNode spriteNodeWithTexture:birdTexture1];
+//        http://stackoverflow.com/questions/21695305/skspritenode-create-a-round-corner-node
         
-        self.flap = [SKAction animateWithTextures:@[birdTexture1, birdTexture2,birdTexture3] timePerFrame:0.2];
-        self.flapForever = [SKAction repeatActionForever:self.flap];
+//        SKSpriteNode *tile = [SKSpriteNode spriteNodeWithColor:[UIColor   colorWithRed:0.0/255.0
+//                                                                                 green:128.0/255.0
+//                                                                                  blue:255.0/255.0
+//                                                                                 alpha:1.0] size:CGSizeMake(30, 30)];
+//        SKCropNode* cropNode = [SKCropNode node];
+//        SKShapeNode* mask = [SKShapeNode node];
+//        [mask setPath:CGPathCreateWithRoundedRect(CGRectMake(-15, -15, 30, 30), 4, 4, nil)];
+//        [mask setFillColor:[SKColor whiteColor]];
+//        [cropNode setMaskNode:mask];
+//        [cropNode addChild:tile];
         
-        [self setTexture:birdTexture1];
-        [self runAction:self.flapForever withKey:@"flapForever"];
+        //[self addChild:cropNode];
+        
+        self.textLabel = [SKLabelNode labelNodeWithFontNamed:@"Arial"];
+        self.textLabel.text = @"2";
+        self.textLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentModeCenter;
+        self.textLabel.verticalAlignmentMode = SKLabelVerticalAlignmentModeCenter;
+        [self addChild:self.textLabel];
+        
+        self.isContact = NO;
     }
+
     return self;
 }
 
 - (void) update:(NSUInteger) currentTime
 {
+    if (self.isContact) {
+//        self.position = CGPointMake(X(self) + FLOOR_SCROLLING_SPEED, Y(self));
+        self.zRotation = 0;
+        return;
+    }
+    
     if(!self.physicsBody){
         if(deltaPosY > VERTICAL_DELTA){
             goingUp = false;
@@ -70,30 +89,30 @@ static bool goingUp = false;
     [self setPhysicsBody:[SKPhysicsBody bodyWithRectangleOfSize:CGSizeMake(26, 18)]];
     self.physicsBody.categoryBitMask = birdBitMask;
     self.physicsBody.mass = 0.1;
-    [self removeActionForKey:@"flapForever"];
 }
 
 - (void) bounce
 {
+    if (self.isContact) {
+        return;
+    }
     [self.physicsBody setVelocity:CGVectorMake(0, 0)];
     [self.physicsBody applyImpulse:CGVectorMake(0, 40)];
-    [self runAction:self.flap];
 }
 
-- (void) birdRevised {
-    // TODO : use texture atlas
-    SKTexture* birdTexture1 = [SKTexture textureWithImageNamed:@"bird_1c"];
-    birdTexture1.filteringMode = SKTextureFilteringNearest;
-    SKTexture* birdTexture2 = [SKTexture textureWithImageNamed:@"bird_2c"];
-    birdTexture2.filteringMode = SKTextureFilteringNearest;
-    SKTexture* birdTexture3 = [SKTexture textureWithImageNamed:@"bird_3c"];
-    birdTexture2.filteringMode = SKTextureFilteringNearest;
-    
-    self.flap = [SKAction animateWithTextures:@[birdTexture1, birdTexture2,birdTexture3] timePerFrame:0.2];
-    self.flapForever = [SKAction repeatActionForever:self.flap];
-    
-    [self setTexture:birdTexture1];
-    [self runAction:self.flapForever withKey:@"flapForever"];
+- (void) setTextNumber:(int) number {
+    self.textLabel.text = [NSString stringWithFormat:@"%i",number];
 }
 
+- (int) getTextNumber {
+    return [self.textLabel.text intValue];
+}
+
+- (void)setIsContact:(BOOL *)isContact {
+    _isContact = isContact;
+    if (isContact) {
+//        self.physicsBody.density = 0.01;
+    } else {
+    }
+}
 @end
